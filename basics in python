@@ -1,0 +1,19 @@
+a="Hello" 
+print(a.upper()) 
+
+a="Hello" 
+print(a.lower()) 
+
+a="hello" 
+b="world" 
+print(" ".join([a, b])) 
+
+a="hello world" 
+print(a.split()) 
+
+text="world" 
+a="hello" 
+print(a.join(reversed(text))) 
+print(text[1])
+
+
