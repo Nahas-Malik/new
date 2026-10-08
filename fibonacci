@@ -1,0 +1,9 @@
+def fact(n):
+    if n<=1:
+        return 1
+num=5
+a,b =0,1
+print("Fibonacci series:",end=" ")
+for i in range(num+1):
+    print(a,end=" ")
+    a,b =b,a+b
