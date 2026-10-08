@@ -1,0 +1,193 @@
+Lambda Practical Questions
+
+
+from functools import reduce
+abs_diff = lambda a, b: abs(a - b)
+print("1.", abs_diff(10, 25)) 
+nums = [1, 2, 3, 4]
+strs = list(map(lambda x: str(x), nums))
+print("2.", strs) 
+triangle_area = lambda b, h: 0.5 * b * h
+print("3.", triangle_area(10, 5))  
+numbers = [12, 25, 30, 45, 50, 105]
+ends_with_5 = list(filter(lambda x: abs(x) % 10 == 5, numbers))
+print("4.", ends_with_5) 
+tuples_list = [(1, 4), (3, 1), (5, 2)]
+sorted_tuples = sorted(tuples_list, key=lambda x: x[1])
+print("5.", sorted_tuples) 
+has_a = lambda s: 'a' in s.lower()
+print("6.", has_a("Python"), has_a("Apple")) 
+multiply_three = lambda a, b, c: a * b * c
+print("7.", multiply_three(2, 3, 4)) 
+words = ["radar", "hello", "level", "python", "madam"]
+palindromes = list(filter(lambda s: s.lower() == s.lower()[::-1], words))
+print("8.", palindromes)
+nums = [5, 15, 25]
+plus_ten = list(map(lambda x: x + 10, nums))
+print("9.", plus_ten)  
+people = [{"name": "Alexander"}, {"name": "Bob"}, {"name": "Charlie"}]
+sorted_people = sorted(people, key=lambda d: len(d["name"]))
+print("10.", sorted_people)  
+is_between_10_50 = lambda x: 10 <= x <= 50
+print("11.", is_between_10_50(25), is_between_10_50(5)) 
+nums = [1, 2, 3, 4, 5]
+product = reduce(lambda x, y: x * y, nums)
+print("12.", product)  
+names = ["alice", "bob", "charlie"]
+capitalized = list(map(lambda s: s.capitalize(), names))
+print("13.", capitalized) 
+nums = range(2, 20)
+is_prime = lambda n: n > 1 and all(n % i != 0 for i in range(2, int(n ** 0.5) + 1))
+primes = list(filter(is_prime, nums))
+print("14.", primes)  
+prices = [12.5, 99.0, 4.99]
+formatted_prices = list(map(lambda p: f"${p:.2f}", prices))
+print("15.", formatted_prices) 
+
+
+
+List Comprehension Practical Questions
+
+squares = [x**2 for x in range(1, 101)]
+print("1.", squares[:10], "...")
+
+text = "Hello World! Python Is Awesome."
+uppercase_letters = [char for char in text if char.isupper()]
+print("2.", uppercase_letters)
+
+nested_list = [[1, 2], [3, 4]]
+flattened = [item for sublist in nested_list for item in sublist]
+print("3.", flattened)
+
+numbers = [1, 2, 3, 4, 5, 6]
+modified = [x**2 if x % 2 == 0 else x for x in numbers]
+print("4.", modified)
+
+cubes_div_by_3 = [x**3 for x in range(1, 31) if x % 3 == 0]
+print("5.", cubes_div_by_3)
+
+sentence = "An apple a day keeps the doctor away"
+vowel_words = [word for word in sentence.split() if word[0].lower() in "aeiou"]
+print("6.", vowel_words)
+
+words = ["python", "list", "comprehension"]
+reversed_words = [word[::-1] for word in words]
+print("7.", reversed_words)
+
+data = [10, None, 20, None, 30]
+cleaned_data = [x if x is not None else 0 for x in data]
+print("8.", cleaned_data)
+
+mixed_list = [1, "hello", 3.14, True, 42, None, 100]
+integers = [x for x in mixed_list if type(x) is int]
+print("9.", integers)
+
+list1 = [1, 2]
+list2 = ["a", "b"]
+cartesian_product = [(x, y) for x in list1 for y in list2]
+print("10.", cartesian_product)
+
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+diagonal = [matrix[i][i] for i in range(len(matrix))]
+print("11.", diagonal)
+
+digits = [1, 2, 3, 4, 5]
+two_digit_combos = [int(f"{d1}{d2}") for d1 in digits for d2 in digits]
+print("12.", two_digit_combos)
+
+ids = [101, 102, 103]
+names = ["Alice", "Bob", "Charlie"]
+dict_list = [{"id": i, "name": n} for i, n in zip(ids, names)]
+print("13.", dict_list)
+
+temperatures = [22, 35, 18, 40, 28]
+temp_labels = ["Hot" if temp >= 30 else "Cold" for temp in temperatures]
+print("14.", temp_labels)
+
+numbers = [1, 2.5, 3, 4.8, 5]
+int_strings = [
+    str(x) for x in numbers if isinstance(x, int) and not isinstance(x, bool)
+]
+print("15.", int_strings)
+
+
+
+
+
+Dictionary Comprehension Practical Questions
+
+
+cubes = {x: x**3 for x in range(1, 21)}
+print("1.", cubes)
+
+text = "programming in python"
+vowel_counts = {v: text.lower().count(v) for v in "aeiou" if v in text.lower()}
+print("2.", vowel_counts)
+
+words = ["python", "code", "comprehension"]
+reversed_words = {word: word[::-1] for word in words}
+print("3.", reversed_words)
+
+tuples_list = [("a", 1), ("b", None), ("c", 3), (None, 4)]
+valid_dict = {k: v for k, v in tuples_list if k is not None and v is not None}
+print("4.", valid_dict)
+
+prices = {"apple": 100, "banana": 40, "cherry": 150}
+discount = 0.10
+discounted_prices = {item: price * (1 - discount) for item, price in prices.items()}
+print("5.", discounted_prices)
+
+my_dict = {"apple": 5, "banana": 3, "orange": 8, "umbrella": 2, "grape": 4}
+vowel_keys = {k: v for k, v in my_dict.items() if k[0].lower() in "aeiou"}
+print("6.", vowel_keys)
+
+items = ["red", "green", "blue"]
+index_dict = {idx: val for idx, val in enumerate(items)}
+print("7.", index_dict)
+
+numbers = [-5, 0, 12, -3, 8]
+num_status = {
+    x: "positive" if x > 0 else "negative" if x < 0 else "zero" for x in numbers
+}
+print("8.", num_status)
+
+sentence = "apple banana apple cherry banana apple"
+words_list = sentence.split()
+word_freq = {word: words_list.count(word) for word in set(words_list)}
+print("9.", word_freq)
+
+original_dict = {"a": 1, "b": 2, "c": 1, "d": 3}
+counts = list(original_dict.values())
+reversed_dict = {
+    v: k for k, v in original_dict.items() if counts.count(v) == 1
+}
+print("10.", reversed_dict)
+
+numbers = range(1, 15)
+is_prime_dict = {
+    n: n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1)) for n in numbers
+}
+print("11.", is_prime_dict)
+
+items = ["a", "b", "a", "c", "b", "a"]
+item_counts = {item: items.count(item) for item in set(items)}
+print("12.", item_counts)
+
+parity_dict = {x: "even" if x % 2 == 0 else "odd" for x in range(1, 31)}
+print("13.", parity_dict)
+
+keys = ["name", "age", "city"]
+vals = ["Alice", 25, "New York"]
+matched_dict = {k: v for k, v in zip(keys, vals)} if len(keys) == len(vals) else {}
+print("14.", matched_dict)
+
+marks = {"Alice": 85, "Bob": 32, "Charlie": 60, "David": 28}
+results = {name: "Pass" if score >= 40 else "Fail" for name, score in marks.items()}
+print("15.", results)
+
+
+
+
+a=[1,2,3,4]
+even=list(filter(lambda x: x% 2==0,a))
+print(list(even))
