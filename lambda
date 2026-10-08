@@ -1,0 +1,30 @@
+add_ten = lambda x: x + 10
+print(add_ten(5))
+
+
+multiply = lambda x, y: x * y
+print(multiply(4, 5))
+
+
+
+numbers = 
+doubled = list(map(lambda x: x * 2, numbers))
+print(doubled)
+
+
+
+numbers = 
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+print(evens)
+
+
+
+pairs = [(1, "one"), (3, "three"), (2, "two")]
+pairs.sort(key=lambda x: x[1])
+print(pairs)
+
+
+
+
+check_max = lambda x, y: x if x > y else y
+print(check_max(10, 20))
