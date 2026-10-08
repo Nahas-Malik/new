@@ -1,0 +1,28 @@
+fruits = ["apple", "banana", "cherry"]
+first_fruit = fruits[0]
+last_fruit = fruits[-1]
+fruits[1] = "blueberry"
+total_fruits = len(fruits)
+
+colors = ["red", "blue"]
+colors.append("green")
+colors.insert(1, "yellow")
+more_colors = ["orange", "purple"]
+colors.extend(more_colors)
+
+items = ["phone", "laptop", "tablet", "watch", "laptop"]
+items.remove("laptop")
+removed_item = items.pop(1)
+print(removed_item)
+items.clear()
+
+numbers = [10, 50, 30, 20, 40]
+numbers.sort()
+numbers.reverse()
+total = sum(numbers)
+highest = max(numbers)
+lowest = min(numbers)
+
+animals = ["cat", "dog", "rabbit"]
+for animal in animals:
+    print(f"I have a pet {animal}!")
