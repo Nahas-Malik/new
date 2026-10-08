@@ -1,0 +1,7 @@
+numbers=[-3, -1, 0, 2, 5]
+result={
+    val:"positive" if val > 0 else "negative" if val < 0 else "zero"
+    for val in numbers
+
+}
+print(result)
