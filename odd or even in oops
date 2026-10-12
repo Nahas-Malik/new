@@ -1,0 +1,11 @@
+class number:
+    def __init__(self,value):
+        self.value = value
+    def is_odd(self):
+            return self.value %2!=0
+a=number(3)
+print(f"Is the number odd?{a.is_odd()}")
+print(f"The value is:{a.value}")
+
+
+
