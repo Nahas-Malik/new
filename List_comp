@@ -1,0 +1,3 @@
+list_mix=[8,9,10,99,'apple','kiwi',lambda x:x%2,]
+list_str=[x for x in list_mix if isinstance(x,str)]
+print(list_str)
