@@ -1,0 +1,4 @@
+list_dict={1:11,7:77,8:88,3:33,4:44,5:55}
+key_largest=max(list_dict,key=list_dict.get)
+del list_dict[key_largest]
+print(list_dict)
