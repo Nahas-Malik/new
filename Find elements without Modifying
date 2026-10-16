@@ -1,0 +1,12 @@
+list_num=[2,4,77,33,4,88,77,55,66,37,22,83,79,22,58,37,22]
+unquie=set()
+dupli=set()
+for num in list_num:
+    if num in unquie:
+        dupli.add(num)
+    else:
+        unquie.add(num)
+unquie_list=list(unquie)
+dupli_list=list(dupli)
+print(unquie_list)
+print(dupli_list)
