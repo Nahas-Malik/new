@@ -1,0 +1,37 @@
+class Book:
+    def __init__(self, title: str, author: str):
+        self.title=title
+        self.author=author
+        self.is_borrowed=False
+    def __repr__(self)->str:
+        status="Borrowed" if self.is_borrowed else "Available"
+        return f"'{self.title}' by {self.author} [{status}]"
+class Library:
+    def __init__(self):
+        self.books={}
+    def add_book(self, book: Book):
+        self.books[book.title]=book
+    def borrow_book(self, title: str)->str:
+        book=self.books.get(title)
+        if not book:
+            return f"Error: '{title}' is not in the library catalogue."
+        if book.is_borrowed:
+            return f"Error: '{title}' is already borrowed."
+        book.is_borrowed=True
+        return f"Success: You have borrowed '{title}'."
+    def return_book(self, title: str) -> str:
+        book=self.books.get(title)
+        if not book:
+            return f"Error: '{title}' does not belong to this library."
+        if not book.is_borrowed:
+            return f"Error: '{title}' was not checked out."
+        book.is_borrowed=False
+        return f"Success: '{title}' has been returned."
+if __name__=="__main__":
+    lib = Library()
+    lib.add_book(Book("The Hobbit", "J.R.R. Tolkien"))
+    lib.add_book(Book("1984", "George Orwell"))
+    print(lib.borrow_book("1984"))
+    print(lib.borrow_book("1984"))
+    print(lib.return_book("1984"))
+    print(lib.books["1984"])
