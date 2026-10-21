@@ -1,0 +1,20 @@
+class Car:
+    def __init__(self, brand: str, model: str, mileage: float):
+        if mileage<0:
+            raise ValueError("Initial mileage cannot be negative.")
+        self.brand=brand
+        self.model=model
+        self.mileage=float(mileage)
+    def update_mileage(self, new_mileage: float):
+        if new_mileage<self.mileage:
+            print("Error: Odometer rollback detected! You cannot lower the mileage.")
+            return
+        self.mileage=float(new_mileage)
+        print(f"Mileage updated successfully to {self.mileage} km.")
+    def display_details(self):
+        print(f"Car: {self.brand} {self.model} | Mileage: {self.mileage} km")
+car1=Car("Tata", "Nexon", 12000.5)
+car1.display_details()
+car1.update_mileage(12500.0)
+car1.update_mileage(11000.0)
+car1.display_details()
