@@ -1,0 +1,13 @@
+class Vehicle:
+    def start_engine(self)->str:
+        return "The vehicle engine starts with a generic roar."
+class Bike(Vehicle):
+    def start_engine(self)->str:
+        return "The bike engine starts with a crisp purr."
+def ignite_engine(vehicle: Vehicle):
+    print(vehicle.start_engine())
+if __name__=="__main__":
+    generic_vehicle=Vehicle()
+    my_bike=Bike()
+    ignite_engine(generic_vehicle)
+    ignite_engine(my_bike)
