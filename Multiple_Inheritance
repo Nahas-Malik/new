@@ -1,0 +1,21 @@
+class Printer:
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+    def print_document(self, text: str):
+        print(f"Printing: {text}")
+class Scanner:
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+    def scan_document(self)->str:
+        return "Scanned contents of the page"
+class AllInOneMachine(Printer, Scanner):
+    def __init__(self, brand: str, **kwargs):
+        super().__init__(**kwargs)
+        self.brand=brand
+    def copy_document(self):
+        scanned_text=self.scan_document()
+        self.print_document(scanned_text)
+if __name__=="__main__":
+    machine=AllInOneMachine(brand="HP")
+    machine.print_document("Hello World!")
+    machine.copy_document()
