@@ -1,0 +1,25 @@
+class Student:
+    def __init__(self, name, score):
+        self.name=name
+        self.score=score
+class School:
+    def __init__(self, name):
+        self.name=name
+        self.students=[]
+    def add_student(self, name, score):
+        self.students.append(Student(name, score))
+    def display_toppers(self):
+        if not self.students:
+            print("No students enrolled yet.")
+            return
+        max_score=max(s.score for s in self.students)
+        toppers=[s.name for s in self.students if s.score == max_score]
+        print(f"\n🏆 Top Score at {self.name}: {max_score}%")
+        print("Topper(s):", ", ".join(toppers))
+if __name__ == "__main__":
+    my_school = School("Apex Academy")
+    my_school.add_student("Alice", 95)
+    my_school.add_student("Bob", 88)
+    my_school.add_student("Charlie", 95)
+    my_school.add_student("David", 91)
+    my_school.display_toppers()
